@@ -6,8 +6,6 @@ Folders contain the following:
 
 - `Run_CallingSTR.pbs`:
    PBS submission script used to detect STR variants in MA lines and apply filtering criteria.
-- `Run_CallingSTR.pbs`:
-   PBS submission script used to detect STR variants in MA lines and apply filtering criteria.
 - `MA_Sample_Depth.txt`:
    Tab‑delimited file listing sequencing depth for each MA line sample, used to verify coverage.
 - `Calling_vcf/`:
