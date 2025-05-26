@@ -8,7 +8,7 @@ Folders contain the following:
    PBS submission script used to detect STR variants in MA lines and apply filtering criteria.
 - `MA_Sample_Depth.txt`:
    Tab‑delimited file listing sequencing depth for each MA line sample, used to verify coverage.
-- `Calling_vcf/`:
+- `Raw_vcf/`:
    Directory containing the resulting VCF files (raw and filtered) for each MA line sample after STR calling.
 - `Calling_File/`:
    Directory containing files used to calculate mutation rates.
