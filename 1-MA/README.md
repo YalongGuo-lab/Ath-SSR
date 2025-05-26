@@ -2,8 +2,6 @@
 
 This section provides a brief explanation of the files and directories related to STR calling in mutation accumulation (MA) lines:
 
----
-
 Folders contain the following:
 
 - `Run_CallingSTR.pbs`:
