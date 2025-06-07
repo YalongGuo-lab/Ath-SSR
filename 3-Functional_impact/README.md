@@ -1,5 +1,5 @@
 
-## Functional Impact of STR Variation in *Arabidopsis thaliana"
+## Functional Impact of STR Variation in *Arabidopsis thaliana*
 
 ### QTL/
 Code and analysis for genome‑wide eSTR and sSTR discovery.
