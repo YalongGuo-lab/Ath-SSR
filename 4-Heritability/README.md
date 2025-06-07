@@ -1,3 +1,4 @@
+##Workflow for heritability estimation.
 
 ### prepare genotype in plink format
 plink  --vcf test.vcf.gz --recode --out test --double-id
