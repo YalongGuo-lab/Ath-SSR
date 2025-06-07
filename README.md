@@ -9,7 +9,7 @@ Folders contain the following:
    Estimate STR mutation rates from Arabidopsis MA lines.
   
 - `2-Intra_Inter_Landscape`:
-   Scripts and documentation for conducting intra-species and inter-species STR analysis.
+   This section provides the data and scripts needed to reproduce and extend the analysis of short tandem repeat (STR) mutation patterns across natural populations.
   
 - `3-Functional_impact`:
   Scripts and files for STR-based QTL analysis.
