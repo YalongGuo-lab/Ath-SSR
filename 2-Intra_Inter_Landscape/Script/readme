@@ -1,0 +1,36 @@
+#####For inter
+#step1 extract corr seq
+perl ../bin/workflow_Ath.pl An-1
+#step2
+for i in $(cat ../list ); do
+  for n in $(cat ../list); do
+    # 排除 i 和 n 相同的情况
+    if [[ "$n" != "$i" ]]; then
+      # 执行 intersect 操作，并输出到对应文件
+      bash ../bin/run_TRF.sh $i\_$n\_seq.fasta STR 5 
+      perl ../bin/get_bed.pl ./STR/$i\_$n\_seq.fasta ./STR/$i\_$n\_STR
+      bedtools intersect -a /data2/share/home/zhangzhiqin/data/STR/Trf_STR/SSR/$i.1.bed \
+                        -b ./STR/$i\_$n\_STR -f 0.9 -wa -wb \
+                         > ./STR/$i\_$n\_intersect
+     perl ../bin/Classify_STR_step4.pl --input ./STR/$i\_$n\_intersect  --fix ./STR_class/$i\_$n.fix --length ./STR_class/$i\_$n.length --naa ./STR_class/$i\_$n.naa --str /data2/share/home/zhangzhiqin/data/STR/Trf_STR/SSR/$i.1.bed
+    fi
+  done
+done
+#step3
+for  i in $(cat zlist);do perl ../../bin/combine.pl --prefix  $i  --output  ./combine/$i\_class;done
+
+
+
+
+#####for intra
+for i in $(cat ../list); do
+  bash ../bin/run_TRF.sh $i\_NT1_seq.fasta STR 5 
+  perl ../bin/get_bed.pl ./STR/$i\_NT1_seq.fasta ./STR/$i\_NT1_STR
+  bedtools intersect -a /data2/share/home/zhangzhiqin/data/STR/Trf_STR/SSR/$i.1.bed \
+                         -b ./STR/$i\_NT1_STR -f 0.9 -wa -wb \
+                         > ./STR/$i\_NT1_intersect
+done
+
+for i in $(cat ../list); do
+perl ../bin/Classify_STR_step4.pl --input ./STR/$i\_NT1_intersect  --fix ./STR_class/$i\_NT1.fix --length ./STR_class/$i\_NT1.length --naa ./STR_class/$i\_NT1.naa --str /data2/share/home/zhangzhiqin/data/STR/Trf_STR/SSR/$i.1.bed
+done
